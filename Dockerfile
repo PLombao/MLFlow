@@ -7,7 +7,10 @@ ENV BUCKET bucket
 RUN pip install mlflow==$MLFLOW_VERSION
 RUN pip install google-cloud-storage
 RUN mkdir -p /mlflow/
-EXPOSE 5000CMD mlflow server \
+
+EXPOSE 5000
+
+CMD mlflow server \
   --backend-store-uri /home/anxo_fernandez/mlflowpersistent \
   --default-artifact-root gs://plataformabidatafinsa-test-mlflow/mlflow \
   --host 0.0.0.0
