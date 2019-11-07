@@ -11,6 +11,6 @@ RUN mkdir -p /mlflow/
 EXPOSE 5000
 
 CMD mlflow server \
-  --backend-store-uri mysql+pymysql://root:dxc.finsa@35.241.178.118/persistence \
+  --backend-store-uri mysql://root:dxc.finsa@35.241.178.118/persistence \
   --default-artifact-root gs://plataformabidatafinsa-test-mlflow/mlflow \
   --host 0.0.0.0
